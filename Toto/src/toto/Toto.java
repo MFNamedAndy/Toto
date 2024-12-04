@@ -15,6 +15,51 @@ public class Toto {
      */
     public static void main(String[] args) {
         // bibi6127
+        private int price;
+    private String code;
+    private Bilet yourNumbers[];
+    private Bilet winingNumbers[];
+    private int money;
+
+    public int getPrice() {
+        return price;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public Bilet[] getYourNumbers() {
+        return yourNumbers;
+    }
+
+    public Bilet[] getWiningNumbers() {
+        return winingNumbers;
+    }
+
+    public int getMoney() {
+        return money;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public void setYourNumbers(Bilet[] yourNumbers) {
+        this.yourNumbers = yourNumbers;
+    }
+
+    public void setWiningNumbers(Bilet[] winingNumbers) {
+        this.winingNumbers = winingNumbers;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
     }
     
 }
