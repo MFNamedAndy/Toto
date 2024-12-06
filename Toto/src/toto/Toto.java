@@ -13,17 +13,13 @@ public class Toto {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // bibi6127
-        private int price;
+
+    public class Bilet{ 
     private String code;
     private Bilet yourNumbers[];
-    private Bilet winingNumbers[];
-    private int money;
+    private Bilet winningNumbers[];
+    
 
-    public int getPrice() {
-        return price;
-    }
 
     public String getCode() {
         return code;
@@ -33,17 +29,12 @@ public class Toto {
         return yourNumbers;
     }
 
-    public Bilet[] getWiningNumbers() {
-        return winingNumbers;
+    public Bilet[] getWinningNumbers() {
+        return winningNumbers;
     }
 
-    public int getMoney() {
-        return money;
-    }
+    
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
 
     public void setCode(String code) {
         this.code = code;
@@ -53,13 +44,11 @@ public class Toto {
         this.yourNumbers = yourNumbers;
     }
 
-    public void setWiningNumbers(Bilet[] winingNumbers) {
-        this.winingNumbers = winingNumbers;
+    public void setWiningNumbers(Bilet[] winningNumbers) {
+        this.winningNumbers = winningNumbers;
     }
 
-    public void setMoney(int money) {
-        this.money = money;
-    }
-    }
+    
+       }
     
 }
