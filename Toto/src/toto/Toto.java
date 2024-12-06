@@ -4,62 +4,64 @@
  */
 package toto;
 
+import java.util.Random;
+import java.util.Scanner;
+
 /**
  *
  * @author andreyyak
  */
 public class Toto {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // bibi6127
-        private int price;
-    private String code;
-    private Bilet yourNumbers[];
-    private Bilet winingNumbers[];
-    private int money;
+    Scanner inp = new Scanner(System.in);
+    Random rand = new Random();
+    private int myNumbers;
+    private int RandomChisla;
 
-    public int getPrice() {
-        return price;
+    public int getMyNumbers() {
+        return myNumbers;
     }
 
-    public String getCode() {
-        return code;
+    public void setMyNumbers(int myNumbers) {
+        if (myNumbers > 0) {
+            this.myNumbers = myNumbers;
+        }
+
     }
 
-    public Bilet[] getYourNumbers() {
-        return yourNumbers;
+    public int getRandomChisla() {
+        return RandomChisla;
     }
 
-    public Bilet[] getWiningNumbers() {
-        return winingNumbers;
+    public void setRandomChisla(int RandomChisla) {
+
+        if (RandomChisla > 0) {
+            this.RandomChisla = RandomChisla;
+        }
     }
 
-    public int getMoney() {
-        return money;
+    public Toto(int myNumbers, int RandomChisla) {
+
+        setMyNumbers(myNumbers);
+        setRandomChisla(RandomChisla);
+
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public Toto() {
+
+        this(0, 0);
+
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public Toto(Toto others) {
+
+        this.myNumbers = others.myNumbers;
+        this.RandomChisla = others.RandomChisla;
+
     }
 
-    public void setYourNumbers(Bilet[] yourNumbers) {
-        this.yourNumbers = yourNumbers;
-    }
+    public String toString() {
 
-    public void setWiningNumbers(Bilet[] winingNumbers) {
-        this.winingNumbers = winingNumbers;
+        return String.format("myNumbers: %d, RandomChisla: %d", myNumbers, RandomChisla);
     }
-
-    public void setMoney(int money) {
-        this.money = money;
-    }
-    }
-    
 }
