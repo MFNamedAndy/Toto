@@ -12,7 +12,6 @@ import java.io.PrintStream;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-
 /**
  *
  * @author bilyanask
@@ -24,6 +23,13 @@ public class chisla extends javax.swing.JFrame {
      */
     public chisla() {
         initComponents();
+        Random rand = new Random();
+        int randomNumber;
+        randomNumber = rand.nextInt(9999999) + 100000;
+        String serialNumber;
+        serialNumber = String.format("%d", randomNumber);
+        //serialNumber = Text.getText();
+        Text.setText(serialNumber);
     }
 
     /**
@@ -36,17 +42,11 @@ public class chisla extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton3 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         Text = new javax.swing.JTextField();
         TextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
+        TextField2 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -105,18 +105,6 @@ public class chisla extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("1 правилно число - 10 лв.");
-
-        jLabel2.setText("2 правилни числа - 20 лв.");
-
-        jLabel3.setText("3 правилни числа - 50 лв.");
-
-        jLabel4.setText("4 правилни числа - 100 лв.");
-
-        jLabel5.setText("5 правилни числа - 700 лв.");
-
-        jLabel6.setText("6 правилни числа - 20 000 лв.");
-
         jLabel7.setText("Serial number:");
 
         Text.addActionListener(new java.awt.event.ActionListener() {
@@ -138,9 +126,9 @@ public class chisla extends javax.swing.JFrame {
             }
         });
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        TextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                TextField2ActionPerformed(evt);
             }
         });
 
@@ -499,6 +487,11 @@ public class chisla extends javax.swing.JFrame {
         });
 
         jButton53.setText("Виж дали печелиш!");
+        jButton53.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton53ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -507,19 +500,16 @@ public class chisla extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel9)
+                        .addGap(488, 488, 488))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(TextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -529,125 +519,122 @@ public class chisla extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Text, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jButton41, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jButton34, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jButton35, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jButton36, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jButton37, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jButton38, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jButton39, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jButton40, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jButton42, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jButton43, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jButton30, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jButton31, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jButton32, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jButton41, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jButton34, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jButton35, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jButton36, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jButton37, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jButton38, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jButton39, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jButton40, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jButton42, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jButton43, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jButton30, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jButton31, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jButton32, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jButton33, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jButton51)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jButton48, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jButton49, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButton50, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButton44, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButton45, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jButton46, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jButton47, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(jButton52)))))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addGap(488, 488, 488))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(7, 7, 7)))))
+                                                .addComponent(jButton33, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jButton51)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jButton48, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jButton49, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButton50, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButton44, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButton45, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jButton46, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jButton47, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jButton52)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                            .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                            .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                            .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                            .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                            .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                            .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                            .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                            .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                            .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                            .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                            .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                            .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(2, 2, 2)))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(152, 152, 152)
@@ -659,23 +646,13 @@ public class chisla extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
                     .addComponent(jLabel7)
                     .addComponent(Text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addGap(1, 1, 1)
+                .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
-                .addGap(24, 24, 24)
+                .addGap(64, 64, 64)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
@@ -755,34 +732,40 @@ public class chisla extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void TextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextActionPerformed
-        Random rand = new Random ();
+        Random rand = new Random();
         int randomNumber;
         randomNumber = rand.nextInt(9999999) + 100000;
         String serialNumber;
         serialNumber = Text.getText();
         Text.setText(serialNumber);
-        
-        
+
+
     }//GEN-LAST:event_TextActionPerformed
 
     private void TextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextField1ActionPerformed
-        // TODO add your handling code here:
+        int [] arr = new arr[6];
+        
+        if(arr[i] != 0){
+        arr[]
+        
+        }
     }//GEN-LAST:event_TextField1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         int a = 2;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 2,";
         TextField1.setText(chisla);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         int a = 5;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 5,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton6ActionPerformed
@@ -791,33 +774,47 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 43;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 43,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton48ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void TextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextField2ActionPerformed
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jTextField2ActionPerformed
+
+        Random rand = new Random();
+        int randomNumber;
+        String n="";
+        randomNumber = rand.nextInt(49) + 1;
+        int[] arr = new int[6];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = rand.nextInt(49) + 1;
+            n = n + arr[i] + "";
+
+        }
+
+        TextField2.setText(n);
+
+
+    }//GEN-LAST:event_TextField2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         int a = 1;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 1,";
         TextField1.setText(chisla);
-        
-        
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton51ActionPerformed
         // TODO add your handling code here:
         File file = new File("C:\\Users\\bilyanask\\Desktop\\Инструкции.txt");
-        try{
+        try {
             throw new FileNotFoundException("Хвърляне на Exception");
-        }catch(FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             try {
                 System.out.println("Няма такъв файл");
                 throw e;
@@ -827,10 +824,10 @@ public class chisla extends javax.swing.JFrame {
         try {
             Scanner fileReader = new Scanner(file);
         } catch (FileNotFoundException ex) {
-            
+
         }
-        
-        JOptionPane.showMessageDialog(null, file);   
+
+        JOptionPane.showMessageDialog(null, file);
     }//GEN-LAST:event_jButton51ActionPerformed
 
     private void jButton52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton52ActionPerformed
@@ -842,7 +839,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 3;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 3,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -851,7 +848,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 4;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 4,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -860,7 +857,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 6;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 6,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton7ActionPerformed
@@ -869,7 +866,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 7;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 7,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton8ActionPerformed
@@ -878,7 +875,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 8;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 8,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton9ActionPerformed
@@ -887,7 +884,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 9;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 9,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton10ActionPerformed
@@ -896,7 +893,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 10;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 10,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton11ActionPerformed
@@ -905,7 +902,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 11;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 11,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton12ActionPerformed
@@ -914,7 +911,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 12;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 12,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton13ActionPerformed
@@ -923,7 +920,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 13;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 13,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton14ActionPerformed
@@ -932,7 +929,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 14;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 14,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton15ActionPerformed
@@ -941,7 +938,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 15;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 15,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton16ActionPerformed
@@ -950,7 +947,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 16;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 16,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton17ActionPerformed
@@ -959,7 +956,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 17;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 17,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton18ActionPerformed
@@ -968,7 +965,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 18;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 18,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton19ActionPerformed
@@ -977,7 +974,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 19;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 19,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton20ActionPerformed
@@ -986,7 +983,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 20;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 20,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton21ActionPerformed
@@ -995,7 +992,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 21;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 21,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton22ActionPerformed
@@ -1004,7 +1001,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 22;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 22,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton23ActionPerformed
@@ -1013,7 +1010,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 23;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 23,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton24ActionPerformed
@@ -1022,7 +1019,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 24;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 24,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton25ActionPerformed
@@ -1031,7 +1028,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 25;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 25,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton26ActionPerformed
@@ -1040,7 +1037,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 26;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 26,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton27ActionPerformed
@@ -1049,7 +1046,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 27;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 27,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton28ActionPerformed
@@ -1058,7 +1055,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 28;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 28,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton29ActionPerformed
@@ -1067,7 +1064,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 29;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 29,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton34ActionPerformed
@@ -1076,7 +1073,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 30;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 30,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton35ActionPerformed
@@ -1085,7 +1082,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 31;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 31,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton36ActionPerformed
@@ -1094,7 +1091,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 32;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 32,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton37ActionPerformed
@@ -1103,7 +1100,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 33;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 33,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton38ActionPerformed
@@ -1112,7 +1109,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 34;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 34,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton39ActionPerformed
@@ -1121,7 +1118,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 35;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 35,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton40ActionPerformed
@@ -1130,7 +1127,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 36;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 36,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton41ActionPerformed
@@ -1139,7 +1136,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 37;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 37,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton42ActionPerformed
@@ -1148,7 +1145,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 38;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 38,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton43ActionPerformed
@@ -1157,7 +1154,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 39;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 39,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton30ActionPerformed
@@ -1166,7 +1163,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 40;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 40,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton31ActionPerformed
@@ -1175,7 +1172,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 41;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 41,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton32ActionPerformed
@@ -1184,7 +1181,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 42;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 42,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton33ActionPerformed
@@ -1193,7 +1190,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 44;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 44,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton49ActionPerformed
@@ -1202,7 +1199,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 45;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 45,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton50ActionPerformed
@@ -1211,7 +1208,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 46;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 46,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton44ActionPerformed
@@ -1220,7 +1217,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 47;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 47,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton45ActionPerformed
@@ -1229,7 +1226,7 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 48;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 48,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton46ActionPerformed
@@ -1238,10 +1235,26 @@ public class chisla extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = 49;
         String chisla;
-        chisla =  TextField1.getText();
+        chisla = TextField1.getText();
         chisla = chisla + " 49,";
         TextField1.setText(chisla);
     }//GEN-LAST:event_jButton47ActionPerformed
+
+    private void jButton53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton53ActionPerformed
+        // TODO add your handling code here:
+        Random rand = new Random();
+        int randomNumber;
+        String n="";
+        randomNumber = rand.nextInt(49) + 1;
+        int[] arr = new int[6];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = rand.nextInt(49) + 1;
+            n = n + arr[i] + ", ";
+
+        }
+
+        TextField2.setText(n);
+    }//GEN-LAST:event_jButton53ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1281,6 +1294,7 @@ public class chisla extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Text;
     private javax.swing.JTextField TextField1;
+    private javax.swing.JTextField TextField2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -1334,15 +1348,8 @@ public class chisla extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
