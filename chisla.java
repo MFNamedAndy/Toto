@@ -4,31 +4,19 @@
  */
 package toto;
 
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.io.BufferedReader;
+
 import java.io.BufferedWriter;
-import java.io.File;
 import java.util.Random;
-import java.util.Scanner;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 /**
  *
  * @author bilyanask
  */
 public class chisla extends javax.swing.JFrame {
-private Process NotePad;
     /**
      * Creates new form chisla
      */
@@ -42,27 +30,7 @@ private Process NotePad;
         serialNumber = String.format("%d", randomNumber);
         //serialNumber = Text.getText();
         Text.setText(serialNumber);
-addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                System.out.println("Window is closing. Perform cleanup actions here.");
-                NotePad.destroyForcibly();
-                try {
-                    Runtime.getRuntime().exec("taskkill /F /IM NotePad.exe");
-                } catch (IOException ex) {
-                    Logger.getLogger(chisla.class.getName()).log(Level.SEVERE, null, ex);
-                }
 
-
-                System.exit(0);
-            }
-        });
-
-        
-        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-
-
-        
     }
 
     public static boolean checkWithRegExp(String userNameString) {
@@ -72,32 +40,6 @@ addWindowListener(new WindowAdapter() {
         return m.matches();
 
     }
-
-    static void readFromFileWithException() {
-        String fileName = "C:\\Users\\bilyanask\\Desktop\\Instrukcii.txt";
-        Scanner fileReader = null;
-        int lineNumber = 0;
-        try {
-            fileReader = new Scanner(new File(fileName));
-            System.out.println("file " + fileName + " opened.");
-
-            while (fileReader.hasNextLine()) {
-                lineNumber++;
-                System.out.printf("Line %d: %s%n", lineNumber, fileReader.nextLine());
-            }
-
-        } catch (FileNotFoundException fnf) {
-            System.out.println("File" + fileName + " not found.");
-        } catch (NullPointerException npe) {
-            System.out.println("File " + fileName + " not found.");
-        } finally {
-            if (fileReader != null) {
-                fileReader.close();
-            }
-            System.out.println("Scanner closed.");
-        }
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -128,7 +70,7 @@ addWindowListener(new WindowAdapter() {
         jButton33 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton41 = new javax.swing.JButton();
-        HistoryButton = new javax.swing.JButton();
+        text = new javax.swing.JButton();
         jButton45 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton24 = new javax.swing.JButton();
@@ -313,11 +255,11 @@ addWindowListener(new WindowAdapter() {
             }
         });
 
-        HistoryButton.setBackground(new java.awt.Color(127, 168, 127));
-        HistoryButton.setText("История");
-        HistoryButton.addActionListener(new java.awt.event.ActionListener() {
+        text.setBackground(new java.awt.Color(127, 168, 127));
+        text.setText("Инструкции");
+        text.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HistoryButtonActionPerformed(evt);
+                textActionPerformed(evt);
             }
         });
 
@@ -623,7 +565,7 @@ addWindowListener(new WindowAdapter() {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(116, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -669,9 +611,9 @@ addWindowListener(new WindowAdapter() {
                             .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(HistoryButton)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(text, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton52))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -839,7 +781,7 @@ addWindowListener(new WindowAdapter() {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton52, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(HistoryButton))
+                    .addComponent(text))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton53)
                 .addContainerGap(39, Short.MAX_VALUE))
@@ -936,25 +878,11 @@ addWindowListener(new WindowAdapter() {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void HistoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HistoryButtonActionPerformed
-        try {
-            BufferedReader br = new BufferedReader(new FileReader("History.txt"));
-            ProcessBuilder processBuilder = new ProcessBuilder("Notepad.exe", "History.txt");
-             NotePad = processBuilder.start();
-            String Line = br.readLine();
-            while (Line != null) {
-                System.out.println(Line);
-                Line = br.readLine();
-            }
+    private void textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textActionPerformed
+        Instrukcii a = new Instrukcii();
+        a.setVisible(true);
 
-        }
-
-        catch (IOException exception) {
-            System.err.println("Caught Exception while writing: " + exception.getMessage());
-        }
-
-
-    }//GEN-LAST:event_HistoryButtonActionPerformed
+    }//GEN-LAST:event_textActionPerformed
 
     private void jButton52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton52ActionPerformed
         // TODO add your handling code here:
@@ -1526,7 +1454,6 @@ addWindowListener(new WindowAdapter() {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton HistoryButton;
     private javax.swing.JTextField Text;
     private javax.swing.JTextField TextField1;
     private javax.swing.JTextField TextField2;
@@ -1586,6 +1513,7 @@ addWindowListener(new WindowAdapter() {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton text;
     // End of variables declaration//GEN-END:variables
 }
 
